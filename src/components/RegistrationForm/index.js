@@ -1,16 +1,28 @@
-import Component from 'react'
+import {Component} from 'react'
 import './index.css'
 
 class RegistrationForm extends Component {
-  state = {formSubmit: false}
+  state = {firstName: '', lastName: '', formSubmit: false}
 
   onSubmitForm = event => {
     event.preventDefault()
     this.setState({formSubmit: true})
   }
 
+  onChangeFirstName = event => {
+    this.setState({firstName: event.target.value})
+  }
+
+  onChangeLastName = event => {
+    this.setState({lastName: event.target.value})
+  }
+
+  displayForm = () => {
+    this.setState({firstName: '', lastName: '', formSubmit: false})
+  }
+
   render() {
-    const {formSubmit} = this.state
+    const {firstName, lastName, formSubmit} = this.state
     return (
       <div className="bg-container1">
         <h1 className="heading">Registration</h1>
@@ -18,9 +30,28 @@ class RegistrationForm extends Component {
           {!formSubmit && (
             <form onSubmit={this.onSubmitForm}>
               <label htmlFor="fname">FAST NAME</label>
-              <input type="text" id="fname" placeholder="First Name" required />
+              <br />
+
+              <input
+                type="text"
+                id="fname"
+                placeholder="First Name"
+                value={firstName}
+                onChange={this.onChangeFirstName}
+                required
+              />
+              <br />
               <label htmlFor="lname">LAST NAME</label>
-              <input type="text" id="lname" placeholder="Last Name" required />
+              <br />
+              <input
+                type="text"
+                id="lname"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={this.onChangeLastName}
+                required
+              />
+              <br />
               <button type="submit">Submit</button>
             </form>
           )}
@@ -32,7 +63,9 @@ class RegistrationForm extends Component {
                 className="success-img"
               />
               <h1>Submitted Successfully</h1>
-              <button type="button">Submit Another Response</button>
+              <button type="button" onClick={this.displayForm}>
+                Submit Another Response
+              </button>
             </div>
           )}
         </div>
