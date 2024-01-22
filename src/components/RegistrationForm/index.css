@@ -1,1 +1,47 @@
 /* Write your CSS code here */
+.bg-container1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.heading {
+  color: #ea580c;
+}
+.bg-container2 {
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: black;
+  padding: 15px;
+}
+.name {
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+button {
+  background-color: #ea580c;
+  color: aliceblue;
+  border-radius: 5px;
+  justify-self: center;
+}
+.message-error {
+  color: #ff0b37;
+  font-size: x-small;
+}
+.successBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.success-text {
+  font-family: 'Roboto';
+  font-weight: bolder;
+  font-size: larger;
+}
+.error-class {
+  border-color: rgb(250, 6, 156);
+  background-color: pink;
+}
