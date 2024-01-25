@@ -77,6 +77,7 @@ class RegistrationForm extends Component {
           value={firstName}
           onChange={this.onChangeFirstName}
           className={showInputError}
+          onBlur={this.onBlurFirstName}
         />
         <br />
         {showFirstNameError ? <p className="message-error">Required</p> : ''}
@@ -101,6 +102,7 @@ class RegistrationForm extends Component {
           value={lastName}
           onChange={this.onChangeLastName}
           className={showInputError}
+          onBlur={this.onBlurLastName}
         />
         <br />
         {showLastNameError ? <p className="message-error">Required</p> : ''}
