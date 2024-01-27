@@ -14,6 +14,8 @@ class RegistrationForm extends Component {
     const {firstName} = this.state
     if (firstName === '') {
       this.setState({showFirstNameError: true})
+    } else {
+      this.setState({showFirstNameError: false})
     }
   }
 
@@ -21,6 +23,8 @@ class RegistrationForm extends Component {
     const {lastName} = this.state
     if (lastName === '') {
       this.setState({showLastNameError: true})
+    } else {
+      this.setState({showLastNameError: false})
     }
   }
 
